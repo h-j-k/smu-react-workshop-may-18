@@ -1,4 +1,6 @@
-[![CircleCI](https://circleci.com/gh/paul-ng/smu-react-workshop-may-18.svg?style=svg)](https://circleci.com/gh/paul-ng/smu-react-workshop-may-18)
+Circle CI [![CircleCI](https://circleci.com/gh/paul-ng/smu-react-workshop-may-18.svg?style=svg)](https://circleci.com/gh/paul-ng/smu-react-workshop-may-18)
+
+Travis CI [![Build Status](https://travis-ci.org/paul-ng/smu-react-workshop-may-18.svg?branch=master)](https://travis-ci.org/paul-ng/smu-react-workshop-may-18)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
