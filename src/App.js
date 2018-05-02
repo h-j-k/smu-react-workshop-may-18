@@ -1,39 +1,71 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import Input from './Component/Input'
-import './App.css';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import NumberInput from './Component/NumberInput'
+import './App.css'
+import _ from 'lodash'
 
 class App extends Component {
 
   state = {
-    result: null
+    result: null,
+    errorMessages: []
   }
 
   calculate = () => {
-    const {first, second} = this.state;
+    const {first, second} = this.state
     this.setState({
       result: first + second
     })
   }
 
-  handleChange = ({target}) => {
+  handleChange = (name, value) => {
     this.setState(
       {
-        [target.name]: parseInt(target.value)
+        [name]: value
       }
     )
   }
 
-  render() {
+  handleErrorMessage = (name, message) => {
+    const errorMessage = {name, message}
+    if (!_.some(this.state.errorMessages, (message) => {return message.name === name})) {
+      this.setState({errorMessages: _.concat(this.state.errorMessages, errorMessage)})
+    }
+  }
+
+  removeMessage = (name) => {
+    const newList = _.reject(this.state.errorMessages, ['name', name])
+    this.setState({errorMessages: newList})
+  }
+
+  render () {
     return (
       <div className="App">
-        <Input name="first" handleChange={this.handleChange}/>
-        <Input name="second" handleChange={this.handleChange}/>
+        <NumberInput name="first"
+                     displayName="first input box"
+                     handleErrorMessage={this.handleErrorMessage}
+                     removeMessage={this.removeMessage}
+                     handleChange={this.handleChange}/>
+
+        <NumberInput name="second"
+                     displayName="second input box"
+                     handleErrorMessage={this.handleErrorMessage}
+                     removeMessage={this.removeMessage}
+                     handleChange={this.handleChange}/>
+
         <button onClick={this.calculate}>Calculate</button>
         <div className="result">Result: {this.state.result && this.state.result}</div>
+        {
+          this.state.errorMessages.map((message) => {
+            return (
+              <div key={message.name}
+                   className="errorMessage">{message.message}</div>
+            )
+          })
+        }
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
