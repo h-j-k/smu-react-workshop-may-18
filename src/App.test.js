@@ -11,7 +11,7 @@ describe('App class', () => {
   });
 
   it('has 2 number input components', () => {
-    expect(wrapper.find('NumberInput').length).toBe(2)
+    expect(wrapper.find('NumberInput').length).toBe(3)
   });
 
   it('has 1 button', () => {
