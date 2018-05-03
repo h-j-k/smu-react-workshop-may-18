@@ -28,6 +28,7 @@ class TaxCalculator extends Component {
         <IncomeRelief
         handleIncomeRelief={this.getEarnedIncomeRelief}/>
 import Income from './Income'
+import {calculateTaxPayable} from './CalculatePayable'
 import './TaxCalculator.css'
 
 class TaxCalculator extends Component {
@@ -38,10 +39,8 @@ class TaxCalculator extends Component {
   }
 
   calculate = () => {
-    const {income} = this.state
-
     this.setState({
-      income: income
+      taxPayable: calculateTaxPayable(this.state.income)
     })
 
   }
@@ -61,7 +60,7 @@ class TaxCalculator extends Component {
           updateIncome={this.updateIncome}
         />
         <button onClick={this.calculate}>Calculate</button>
-        <div className="taxPayable">Tax: {this.state.income}</div>
+        <div className="taxPayable">Tax Payable: {this.state.taxPayable}</div>
       </div>
 
     )
