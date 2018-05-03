@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Income from './Income'
+import './TaxCalculator.css'
 
 class TaxCalculator extends Component {
   //calculate tax payable
@@ -13,3 +14,4 @@ class TaxCalculator extends Component {
 }
 
 export default TaxCalculator
+// Gary's test

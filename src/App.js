@@ -36,6 +36,7 @@ class App extends Component {
   removeMessage = (name) => {
     const newList = _.reject(this.state.errorMessages, ['name', name])
     this.setState({errorMessages: newList})
+      // comment
   }
 
   render () {
