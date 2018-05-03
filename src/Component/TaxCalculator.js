@@ -34,7 +34,6 @@ class TaxCalculator extends Component {
     })
   }
 
-
   render () {
     return (
       <div className="tax-calculator">
