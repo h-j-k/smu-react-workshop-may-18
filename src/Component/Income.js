@@ -1,18 +1,22 @@
-import React from 'react';
+import React from 'react'
 
 class Income extends React.Component {
 
-  render() {
+  render () {
     return (
       <div className="income-section">
         <table>
-          <th>
-            <td colSpan="2">Income</td>
-          </th>
+          <thead>
           <tr>
-            <td>Employment Income</td>
+            <th colSpan="2">Awesome Income Tax Calculator</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Salary Income</td>
             <td><input/></td>
           </tr>
+          </tbody>
         </table>
       </div>
     )
