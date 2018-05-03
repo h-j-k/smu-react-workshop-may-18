@@ -12,9 +12,9 @@ class App extends Component {
   }
 
   calculate = () => {
-    const {first, second} = this.state
+    const {first, second, third} = this.state
     this.setState({
-      result: first + second
+      result: first + second + third
     })
   }
 

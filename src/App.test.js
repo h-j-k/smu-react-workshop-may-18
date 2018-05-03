@@ -18,5 +18,14 @@ describe('App class', () => {
     expect(wrapper.find('button').length).toBe(1)
   });
 
+  it('should calculate the sum of 3 inputs', () => {
+    // setup of the test: the parameters
+    wrapper.setState({first: 1, second: 2, third: 3})
+    // do something
+    wrapper.instance().calculate();
+    // assert the result of the previous operation
+    expect(wrapper.state('result')).toBe(6)
+  })
+
 
 })
