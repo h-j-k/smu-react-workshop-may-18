@@ -2,10 +2,10 @@ import React from 'react';
 
 class Income extends React.Component {
 
-
-  
-
-
+  updateIncome = ({target}) => {
+    const {name, value} = target;
+    this.props.updateIncome(name, value);
+  }
 
   render() {
     return (
@@ -16,7 +16,7 @@ class Income extends React.Component {
           </th>
           <tr>
             <td>Employment Income</td>
-            <td><input type='text'/></td>
+            <td><input type='text' name={this.props.name} onChange={this.updateIncome} /></td>
           </tr>
           <tr>
             <td>Earned Income relief</td>
