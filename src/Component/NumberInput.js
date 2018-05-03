@@ -3,8 +3,7 @@ import _ from 'lodash'
 
 class NumberInput extends Component {
 
-  validateInput = (event) => {
-    const target = event.target
+  validateInput = ({target}) => {
     const {name, value} = target
     if (!isNaN(target.value)) {
       this.props.removeMessage(this.props.name)
