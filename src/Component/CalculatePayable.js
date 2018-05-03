@@ -1,4 +1,4 @@
-export const calculate = (chargeable_income) => {
+export const calculateTaxPayable = (chargeable_income) => {
     //range from 20_000 to 80_000
     if(chargeable_income<=20000){
         return 0;
