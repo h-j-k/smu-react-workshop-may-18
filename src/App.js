@@ -60,6 +60,12 @@ class App extends Component {
                      removeMessage={this.removeMessage}
                      handleChange={this.handleChange}/>
 
+
+
+
+        
+
+
         <button onClick={this.calculate}>Calculate</button>
         <div className="result">Result: {this.state.result && this.state.result}</div>
         {
