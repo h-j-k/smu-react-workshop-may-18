@@ -2,4 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-Continuous Integration with Circle CI.
+Continuous Integration with Circle CI and Travis-CI.
+
+[Test it here!](https://paul-ng.github.io/smu-react-workshop-may-18/)
